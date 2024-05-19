@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+    stages{
+        stage('Fetch code'){
+            steps{
+                git branch: 'main' , url: 'https://github.com/VisarapuAmulya/Containerization-of-Java-Project-Using-Docker.git'
+            }
+        }
+        stage('Build'){
+            steps{
+                sh 'mvn install'
+            }
+        }
+        stage('Test'){
+            steps{
+                sh 'mv test'
+            }
+        }
+    }
+}
